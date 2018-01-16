@@ -3,6 +3,8 @@ var express = require('express'),
     request = require('request'),
     qrcode = require('qrcode-npm'),
     decode = require('salesforce-signed-request'),
+      path       = require('path'),
+
 
     consumerSecret = process.env.CONSUMER_SECRET,
 
