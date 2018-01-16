@@ -12,6 +12,14 @@ app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
 app.use(express.static(__dirname + '/public'));
 
+
+var views = path.join(__dirname, 'views');
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(views, 'index.ejs'));
+});
+
+
 app.post('/signedrequest', function(req, res) {
 
     // You could save this information in the user session if needed
