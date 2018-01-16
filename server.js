@@ -3,8 +3,6 @@ var express = require('express'),
     request = require('request'),
     qrcode = require('qrcode-npm'),
     decode = require('salesforce-signed-request'),
-      path       = require('path'),
-
 
     consumerSecret = process.env.CONSUMER_SECRET,
 
@@ -13,14 +11,6 @@ var express = require('express'),
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
 app.use(express.static(__dirname + '/public'));
-
-
-var views = path.join(__dirname, 'views');
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(views, 'index.ejs'));
-});
-
 
 app.post('/signedrequest', function(req, res) {
 
